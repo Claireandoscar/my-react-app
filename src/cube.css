@@ -1,0 +1,40 @@
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+.cube.flipped {
+  transform: translateZ(-100px) rotateX(-90deg);
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+}
+
+.front  { transform: rotateY(  0deg) translateZ(100px); background-image: url('./images/front.png'); }
+.back   { transform: rotateY(180deg) translateZ(100px); background-image: url('./images/back.png'); }
+.left   { transform: rotateY(-90deg) translateZ(100px); background-image: url('./images/left.png'); }
+.right  { transform: rotateY( 90deg) translateZ(100px); background-image: url('./images/right.png'); }
+.top    { transform: rotateX( 90deg) translateZ(100px); background-image: url('./images/top.png'); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); background-image: url('./images/bottom.png'); }
